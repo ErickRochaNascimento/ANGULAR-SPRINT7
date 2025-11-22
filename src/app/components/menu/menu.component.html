@@ -1,0 +1,22 @@
+<div id="menu" [ngClass]="isCollapsed ? 'menu-collapsed' : ''">
+
+  <!-- LOGO -->
+  <div id="menu-logo" *ngIf="!isCollapsed">
+    <img src="logoFord.png" alt="Ford Logo" id="menu-logo-img">
+    <a id="menu-close-btn" (click)="closeMenu()">
+      <img id="menu-close-btn" src="filesMenu/iconeXMenu.png" alt="">
+    </a>
+ 
+  </div>
+
+  <!-- LISTA DO MENU -->
+  <ul id="menu-nav" *ngIf="!isCollapsed">
+    <li class="menu-item" *ngFor="let item of menuItems">
+      <a class="menu-link" [routerLink]="item.routeLink" routerLinkActive="menu-active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <span class="menu-text">{{ item.label }}</span>
+      </a>
+    </li>
+  </ul>
+
+</div>

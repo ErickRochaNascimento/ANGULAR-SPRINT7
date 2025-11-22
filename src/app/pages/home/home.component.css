@@ -1,0 +1,101 @@
+*{
+    border: 0;
+    padding: 0%;
+    margin: 0;
+    text-decoration: none;
+    color: #003057;
+}
+
+
+
+.welcome-modal {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h2 {
+    color: #003057; /* Cor Ford Blue */
+    margin-bottom: 10px;
+    font-size: 16rem;
+    font-weight: normal;
+}
+
+.p {
+    color: #003057;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Container que segura a imagem de fundo */
+.main-container {
+  /* Caminho para a imagem na pasta assets */
+  background-image: url('/img/ranger.png');
+  
+  /* Garante que a imagem cubra todo o espaço disponível */
+  
+  /* Centraliza a imagem */
+  background-position: center;
+  
+  /* Evita que a imagem se repita */
+  background-repeat: no-repeat;
+  
+  /* Define a altura: 
+     calc(100vh - 60px) tenta pegar a altura total da tela MENOS a altura do menu.
+     Ajuste o '60px' para a altura real do seu menu.
+     Se preferir tela cheia total, use apenas '100vh'. */
+  
+  /* Configurações para centralizar o cartão (Flexbox) */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  height: 100vh;
+    width: auto;
+}
+
+
+
+/* O cartão branco transparente */
+.content-card {
+  /* Cor branca com 80% de opacidade (o último número 0.8 define isso) */
+  background-color: rgba(255, 255, 255, 0.85);
+  
+  /* Efeito de desfoque no fundo (opcional, estilo "vidro") */
+  backdrop-filter: blur(5px); 
+  
+  /* Tamanho do cartão */
+  width: 500px;
+  height: 400px; /* Ajuste conforme necessário */
+  
+  /* Bordas e sombras para ficar bonito */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+  /* Espaçamento interno */
+  padding: 20px;
+  
+  /* Layout interno do cartão */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.card-body h1 {
+  color: #007bff; /* Azul parecido com o da imagem */
+  font-weight: bold;
+}
+

@@ -1,0 +1,157 @@
+/* ----------- Layout geral ----------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    height: 100vh;
+    background: #ffffff;
+}
+
+/* ----------- Coluna esquerda (imagem do carro) ----------- */
+#imagemAoLado {
+  width: 50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#imagemVeiculoLogin {
+    width: 75vh;
+    height: auto;
+}
+
+
+/* ----------- Coluna direita ----------- */
+/* Container geral da parte direita */
+.auth-conteiner {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding-top: 20px; /* espaço para o logo */
+}
+
+/* LOGO NO TOPO */
+.logo-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20vh; /* espaço entre logo e formulário */
+
+}
+
+.logo-top img {
+    width: 20vh;
+    height: auto;
+}
+
+/* Área do formulário fica centralizada, mas separada */
+.form-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* ----------- Título ----------- */
+.auth-conteiner h2 {
+    font-size: 24px;
+    color: #0b8736;
+    margin-bottom: 20px;
+}
+
+/* ----------- Formulário ----------- */
+form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: -5px;
+}
+
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #d3d3d3;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #0b8736;
+}
+
+/* Botão principal */
+button[type="submit"] {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    background: #b3b3b3;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+}
+
+button[type="submit"]:hover {
+    background: #9c9c9c;
+}
+
+
+
+/* ----------- Texto e botão inferior (criar conta/login) ----------- */
+.auth-conteiner p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+}
+
+.auth-conteiner p button {
+    background: none;
+    border: none;
+    color: #0b8736;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-conteiner p button:hover {
+    text-decoration: underline;
+}
+
+/* ----------- Estilos para "Logar automaticamente" ----------- */
+.remember-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.remember-me-container label {
+    margin-bottom: 0; /* Remove a margem inferior padrão do label */
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.remember-me-container input[type="checkbox"] {
+    width: auto; /* Permite que o checkbox tenha seu tamanho padrão */
+    margin-left: 10px;
+    cursor: pointer;
+}

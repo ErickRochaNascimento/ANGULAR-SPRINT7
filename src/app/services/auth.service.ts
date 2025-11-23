@@ -18,6 +18,16 @@ export class AuthService {
     return this.http.post<Usuario>(`${this.apiUrl}/login`,usuario)
   }
 
+  isAuthenticated(): boolean {
+    // Verifica se existe um token ou dados do usuário no localStorage
+    // Retorna true se existir, false se não.
+    if (typeof localStorage !== 'undefined') {
+      return !!localStorage.getItem('usuario_logado');
+    }
+    return false;
+  }
+
+
   logout(): void {
     localStorage.removeItem(this.tokenKey); // Remove o token
     this.router.navigate(['/login']);      // Redireciona para a tela de login

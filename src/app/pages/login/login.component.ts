@@ -19,6 +19,9 @@ export class LoginComponent {
   login(){
     this.authService.login(this.usuario).subscribe({
       next:(response)=>{
+        localStorage.setItem('usuario_logado', JSON.stringify(response));
+
+
         this.router.navigate(["/home"]);
       },
       error:(err)=>{

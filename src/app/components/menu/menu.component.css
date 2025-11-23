@@ -7,7 +7,6 @@
   /* escondido */
   height: 100vh;
   background: #f5f5f5;
-  padding: 20px;
   z-index: 1001;
   /* sobrepõe o conteúdo */
 
@@ -29,7 +28,7 @@
   justify-content: left;
   align-items: center;
   position: relative;
-  padding: 10px 0;
+  padding: 10px;
 }
 
 #menu-logo-img {

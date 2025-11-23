@@ -1,9 +1,14 @@
-#btnMenu{
+#btnMenu {
     width: 3vh;
     height: auto;
-}
 
-.header{
-    height: 5vh;
-    background-color: aqua;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

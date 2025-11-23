@@ -100,3 +100,28 @@
   font-weight: bold;
 }
 
+
+.actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-logout,a[href="dashboard"]{
+    color: #003057;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: background 0.3s;
+    font-size: 3vh;
+}
+
+.btn-logout:hover,a[href="dashboard"]:hover{
+  color: #007bff;
+}
+
+
+

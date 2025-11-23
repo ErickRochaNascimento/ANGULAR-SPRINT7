@@ -1,4 +1,3 @@
-
 <body>
     <app-header></app-header>
     <div class="main-container">
@@ -8,7 +7,12 @@
             </div>
             <div class="card-body">
                 <h1>Seja bem vindo(a)!</h1>
-                <a href="dashboard">Dashboard</a>
+                
+                <div class="actions">
+                    <a href="dashboard" class="btn-link">Dashboard</a>
+                    <button (click)="sair()" class="btn-logout">Sair</button>
+                </div>
+                
             </div>
         </div>
     </div>

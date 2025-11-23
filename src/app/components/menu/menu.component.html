@@ -1,12 +1,12 @@
-<div [ngClass]="isCollapsed ? 'menu-collapsed' : ''"   class="menu" [class.open]="!isCollapsed">
+<div [ngClass]="isCollapsed ? 'menu-collapsed' : ''" class="menu" [class.open]="!isCollapsed">
 
   <!-- LOGO -->
   <div id="menu-logo" *ngIf="!isCollapsed">
-    <a href="/home"><img   src="img/ford.png" alt="Ford Logo" id="menu-logo-img"></a>
+    <a href="/home"><img src="img/ford.png" alt="Ford Logo" id="menu-logo-img"></a>
     <a id="menu-close-btn" (click)="closeMenu()">
       <img id="menu-close-btn" src="icons/iconeXMenu.png" alt="iconeXMenu">
     </a>
- 
+
   </div>
 
   <!-- LISTA DO MENU -->
@@ -17,6 +17,12 @@
         <span class="menu-text">{{ item.label }}</span>
       </a>
     </li>
+    <li class="menu-item">
+    <a class="menu-link" (click)="logout()">
+      <span class="menu-text">Logout</span>
+    </a>
+  </li>
+
   </ul>
 
 </div>

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -25,4 +26,13 @@ export class MenuComponent {
   closeMenu(): void {
     this.changeIsCollapsed.emit(true);
   }
+
+  constructor(private authService: AuthService) {}
+
+  logout(): void {
+    this.authService.logout();
+    this.closeMenu();       
+  }
+
+
 }

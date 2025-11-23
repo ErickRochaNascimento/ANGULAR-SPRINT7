@@ -14,8 +14,8 @@ export class MenuComponent {
   @Output() changeIsCollapsed = new EventEmitter<boolean>();
 
   menuItems = [
-    { routeLink: 'home', label: 'Home' },
-    { routeLink: 'dashboard', label: 'Dashboard' },
+    { routeLink: '/home', label: 'Home' },      
+    { routeLink: '/dashboard', label: 'Dashboard' },
   ];
 
   toggleCollapse(): void {

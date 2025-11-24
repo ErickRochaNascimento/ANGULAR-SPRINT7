@@ -12,10 +12,10 @@ export class AuthService {
   private apiUrl = "http://localhost:3001";
   private tokenKey = 'authToken';
 
-  constructor(private http:HttpClient, private router: Router ) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  login(usuario:Pick<Usuario, 'nome'|'senha'>):Observable<Usuario>{
-    return this.http.post<Usuario>(`${this.apiUrl}/login`,usuario)
+  login(usuario: Pick<Usuario, 'nome' | 'senha'>): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.apiUrl}/login`, usuario)
   }
 
   isAuthenticated(): boolean {
@@ -31,5 +31,8 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem(this.tokenKey); // Remove o token
     this.router.navigate(['/login']);      // Redireciona para a tela de login
+    if (typeof localStorage !== 'undefined') {
+      localStorage.removeItem('usuario_logado'); // Remove o "crachá" do usuário
+    }
   }
 }

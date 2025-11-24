@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -13,6 +13,8 @@ import { AuthService } from '../../services/auth.service';
 export class MenuComponent {
   @Input({ required: true }) isCollapsed!: boolean;
   @Output() changeIsCollapsed = new EventEmitter<boolean>();
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   menuItems = [
     { routeLink: '/home', label: 'Home' },      
@@ -27,11 +29,12 @@ export class MenuComponent {
     this.changeIsCollapsed.emit(true);
   }
 
-  constructor(private authService: AuthService) {}
+  
 
   logout(): void {
     this.authService.logout();
-    this.closeMenu();       
+    this.closeMenu(); 
+    this.router.navigate(['/login']);      
   }
 
 

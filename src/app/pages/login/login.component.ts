@@ -10,11 +10,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   usuario = {
     nome: '',
     senha: ''
   }
+
+  lembrar: boolean = false;
 
   mensagemErro: string = '';
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
@@ -31,8 +33,11 @@ export class LoginComponent {
   login() {
     this.authService.login(this.usuario).subscribe({
       next: (response) => {
-        localStorage.setItem('usuario_logado', JSON.stringify(response));
-
+        if (this.lembrar) {
+          localStorage.setItem('usuario_logado', JSON.stringify(response));
+        } else {
+          sessionStorage.setItem('usuario_logado', JSON.stringify(response));
+        }
 
         this.router.navigate(["/home"]);
       },

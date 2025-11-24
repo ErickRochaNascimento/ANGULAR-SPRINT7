@@ -21,8 +21,8 @@ export class AuthService {
   isAuthenticated(): boolean {
     // Verifica se existe um token ou dados do usuário no localStorage
     // Retorna true se existir, false se não.
-    if (typeof localStorage !== 'undefined') {
-      return !!localStorage.getItem('usuario_logado');
+    if (typeof localStorage !== 'undefined' && typeof sessionStorage !== 'undefined') {
+      return !!localStorage.getItem('usuario_logado') || !!sessionStorage.getItem('usuario_logado');
     }
     return false;
   }
@@ -32,7 +32,8 @@ export class AuthService {
     localStorage.removeItem(this.tokenKey); // Remove o token
     this.router.navigate(['/login']);      // Redireciona para a tela de login
     if (typeof localStorage !== 'undefined') {
-      localStorage.removeItem('usuario_logado'); // Remove o "crachá" do usuário
+      localStorage.removeItem('usuario_logado');
+      sessionStorage.removeItem('usuario_logado'); // Limpa também a sessão
     }
   }
 }
